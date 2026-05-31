@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>harman/karton | Model SHK1058</title>
+    <title id="site-title">harman/karton | Model SHK1058</title>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace;
@@ -18,6 +18,28 @@
             border-bottom: 3px dashed #a07a5d;
             padding-bottom: 15px;
             text-align: center;
+            position: relative;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+        .lang-button {
+            background-color: #3e2a1c;
+            color: #f4e9d5;
+            border: 2px solid #3e2a1c;
+            padding: 6px 12px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 3px 3px 0px #a07a5d;
+        }
+        .lang-button:hover {
+            background-color: #ff6a00;
+            color: #ffffff;
+            border-color: #ff6a00;
         }
         h1 {
             font-size: 2.5rem;
@@ -46,7 +68,7 @@
         .product-title {
             font-size: 1.8rem;
             margin: 15px 0 5px 0;
-            color: #d95d00; /* Orange tape accent */
+            color: #d95d00; 
             font-weight: bold;
         }
         .orange-tape-accent {
@@ -96,41 +118,107 @@
 </head>
 <body>
 
+    <div class="nav-container">
+        <button class="lang-button" id="lang-btn" onclick="toggleLanguage()">Translate to English</button>
+    </div>
+
     <header>
         <h1>harman/karton</h1>
-        <p class="tagline">„Brzmienie prosto z pudła. Dosłownie.”</p>
+        <p class="tagline" id="tagline">„Brzmienie prosto z pudła. Dosłownie.”</p>
     </header>
 
     <div class="product-container">
         <img src="IMG_0560.jpeg" alt="harman/karton SHK1058" class="product-image">
         <div class="product-title">Model: SHK1058</div>
-        <div class="orange-tape-accent">PROTOTYP KURIERSKI V1</div>
+        <div class="orange-tape-accent" id="accent">PROTOTYP KURIERSKI V1</div>
     </div>
 
     <section>
-        <h2>O produkcie</h2>
-        <p>Przedstawiamy flagowe i jedyne dzieło naszych inżynierów – <strong>SHK1058</strong>. To audiofilski głośnik wolnostojący, który redefiniuje pojęcie akustyki ekologicznej. Obudowa została wykonana z selekcjonowanej, wielowarstwowej tektury falistej o wysokiej gramaturze, gwarantującej unikalne, organiczne rezonanse celulozowe.</p>
-        <p>Konstrukcja została ręcznie dostrojona i zabezpieczona wzmocnioną, pomarańczową taśmą pakową klasy przemysłowej, co eliminuje niepożądane drgania bocznych ścianek podczas głębokich uderzeń basu.</p>
+        <h2 id="about-head">O produkcie</h2>
+        <p id="about-p1">Przedstawiamy flagowe i jedyne dzieło naszych inżynierów – <strong>SHK1058</strong>. To audiofilski głośnik wolnostojący, który redefiniuje pojęcie akustyki ekologicznej. Obudowa została wykonana z selekcjonowanej, wielowarstwowej tektury falistej o wysokiej gramaturze, gwarantującej unikalne, organiczne rezonanse celulozowe.</p>
+        <p id="about-p2">Konstrukcja została ręcznie dostrojona i zabezpieczona wzmocnioną, pomarańczową taśmą pakową klasy przemysłowej, co eliminuje niepożądane drgania bocznych ścianek podczas głębokich uderzeń basu.</p>
     </section>
 
     <section>
-        <h2>Specyfikacja Techniczna</h2>
+        <h2 id="spec-head">Specyfikacja Techniczna</h2>
         <ul>
-            <li><strong>Model:</strong> SHK1058 (edycja limitowana, unikat)</li>
-            <li><strong>Obudowa:</strong> Tektura wysyłkowa z recyklingu, ręcznie opisana markerem permanentnym</li>
-            <li><strong>System Bass-Reflex:</strong> Geometryczne, dolne wycięcia rezonansowe wykonane nożykiem tapicerskim</li>
-            <li><strong>System Bezpieczeństwa:</strong> Zintegrowana powłoka ochronna z napisem <em>„Sprawdź zawartość w obecności kuriera”</em></li>
-            <li><strong>Pasmo przenoszenia:</strong> Odczuwalne (zależne od wilgotności powietrza w pokoju)</li>
+            <li id="li-1"><strong>Model:</strong> SHK1058 (edycja limitowana, unikat)</li>
+            <li id="li-2"><strong>Obudowa:</strong> Tektura wysyłkowa z recyklingu, ręcznie opisana markerem permanentnym</li>
+            <li id="li-3"><strong>System Bass-Reflex:</strong> Geometryczne, dolne wycięcia rezonansowe wykonane nożykiem tapicerskim</li>
+            <li id="li-4"><strong>System Bezpieczeństwa:</strong> Zintegrowana powłoka ochronna z napisem <em>„Sprawdź zawartość w obecności kuriera”</em></li>
+            <li id="li-5"><strong>Pasmo przenoszenia:</strong> Odczuwalne (zależne od wilgotności powietrza w pokoju)</li>
         </ul>
     </section>
 
-    <div class="alert-box">
+    <div class="alert-box" id="alert-text">
         <strong>WAŻNA INSTRUKCJA OBSŁUGI:</strong> Produkt wysoce wrażliwy na wilgoć, deszcz oraz zalania napojami energetycznymi. W przypadku zauważenia rozklejania się dolnego portu basowego, należy niezwłocznie użyć domowej taśmy klejącej. Chronić przed kotami.
     </div>
 
-    <footer>
+    <footer id="footer-text">
         <p>&copy; 2026 harman/karton Audio Labs. Wszystkie prawa zastrzeżone. Zapakowane, zaklejone, wysłane.</p>
     </footer>
 
+    <script>
+        const translations = {
+            pl: {
+                title: "harman/karton | Model SHK1058",
+                tagline: "„Brzmienie prosto z pudła. Dosłownie.”",
+                accent: "PROTOTYP KURIERSKI V1",
+                aboutHead: "O produkcie",
+                aboutP1: "Przedstawiamy flagowe i jedyne dzieło naszych inżynierów – <strong>SHK1058</strong>. To audiofilski głośnik wolnostojący, który redefiniuje pojęcie akustyki ekologicznej. Obudowa została wykonana z selekcjonowanej, wielowarstwowej tektury falistej o wysokiej gramaturze, gwarantującej unikalne, organiczne rezonanse celulozowe.",
+                aboutP2: "Konstrukcja została ręcznie dostrojona i zabezpieczona wzmocnioną, pomarańczową taśmą pakową klasy przemysłowej, co eliminuje niepożądane drgania bocznych ścianek podczas głębokich uderzeń basu.",
+                specHead: "Specyfikacja Techniczna",
+                li1: "<strong>Model:</strong> SHK1058 (edycja limitowana, unikat)",
+                li2: "<strong>Obudowa:</strong> Tektura wysyłkowa z recyklingu, ręcznie opisana markerem permanentnym",
+                li3: "<strong>System Bass-Reflex:</strong> Geometryczne, dolne wycięcia rezonansowe wykonane nożykiem tapicerskim",
+                li4: "<strong>System Bezpieczeństwa:</strong> Zintegrowana powłoka ochronna z napisem <em>„Sprawdź zawartość w obecności kuriera”</em>",
+                li5: "<strong>Pasmo przenoszenia:</strong> Odczuwalne (zależne od wilgotności powietrza w pokoju)",
+                alert: "<strong>WAŻNA INSTRUKCJA OBSŁUGI:</strong> Produkt wysoce wrażliwy na wilgoć, deszcz oraz zalania napojami energetycznymi. W przypadku zauważenia rozklejania się dolnego portu basowego, należy niezwłocznie użyć domowej taśmy klejącej. Chronić przed kotami.",
+                footer: "&copy; 2026 harman/karton Audio Labs. Wszystkie prawa zastrzeżone. Zapakowane, zaklejone, wysłane.",
+                btn: "Translate to English"
+            },
+            en: {
+                title: "harman/karton | Model SHK1058",
+                tagline: '"Sound straight out of the box. Literally."',
+                accent: "COURIER PROTOTYPE V1",
+                aboutHead: "About the Product",
+                aboutP1: "Introducing the flagship and sole creation of our engineers – the <strong>SHK1058</strong>. This is an audiophile floor-standing speaker that redefines ecological acoustics. The enclosure is crafted from selected, high-grammage multi-wall corrugated cardboard, guaranteeing unique, organic cellulose resonance.",
+                aboutP2: "The construction has been hand-tuned and secured with reinforced, industrial-grade orange packing tape, eliminating unwanted side-wall vibrations during deep bass hits.",
+                specHead: "Technical Specification",
+                li1: "<strong>Model:</strong> SHK1058 (limited edition, unique)",
+                li2: "<strong>Enclosure:</strong> Recycled shipping cardboard, hand-labeled with a permanent marker",
+                li3: "<strong>Bass-Reflex System:</strong> Geometric bottom resonance cutouts made with a utility knife",
+                li4: "<strong>Security System:</strong> Integrated protective layer reading <em>\"Check contents in the presence of the courier\"</em>",
+                li5: "<strong>Frequency Response:</strong> Perceptible (depending on room humidity)",
+                alert: "<strong>IMPORTANT OPERATING INSTRUCTIONS:</strong> Product highly sensitive to moisture, rain, and energy drink spills. If you notice the bottom bass port peeling, apply household tape immediately. Keep away from cats.",
+                footer: "&copy; 2026 harman/karton Audio Labs. All rights reserved. Packed, taped, shipped.",
+                btn: "Zmień na Polski"
+            }
+        };
+
+        function toggleLanguage() {
+            const currentLang = document.documentElement.lang;
+            const newLang = currentLang === 'pl' ? 'en' : 'pl';
+            document.documentElement.lang = newLang;
+
+            const t = translations[newLang];
+            
+            document.getElementById('site-title').textContent = t.title;
+            document.getElementById('tagline').textContent = t.tagline;
+            document.getElementById('accent').textContent = t.accent;
+            document.getElementById('about-head').textContent = t.aboutHead;
+            document.getElementById('about-p1').innerHTML = t.aboutP1;
+            document.getElementById('about-p2').innerHTML = t.aboutP2;
+            document.getElementById('spec-head').textContent = t.specHead;
+            document.getElementById('li-1').innerHTML = t.li1;
+            document.getElementById('li-2').innerHTML = t.li2;
+            document.getElementById('li-3').innerHTML = t.li3;
+            document.getElementById('li-4').innerHTML = t.li4;
+            document.getElementById('li-5').innerHTML = t.li5;
+            document.getElementById('alert-text').innerHTML = t.alert;
+            document.getElementById('footer-text').innerHTML = t.footer;
+            document.getElementById('lang-btn').textContent = t.btn;
+        }
+    </script>
 </body>
 </html>
